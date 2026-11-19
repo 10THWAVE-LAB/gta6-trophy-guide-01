@@ -1,3 +1,8 @@
+// Leonida Legend: my own GTA VI trophy guide and tracker — 55 trophies, every guide
+// written for this entry with cited sources, a four-stage roadmap to the platinum,
+// filters, a spoiler setting, and progress saved in the browser. The rest of this
+// file is the kit's plumbing, unchanged: it copies app/ and screenshots/ to /output
+// and writes the dossier with the vendored make.fun library.
 // A working gta6-trophy-guide-01 entry (Node 22, standard library only): the guide is this directory's app/ folder,
 // plain static files a browser opens at app/index.html (ES modules, CSS, no build step), offline: it loads nothing
 // over the network, and its trophy list and guides are app/data/trophies.json. The program hands it in: it copies app/

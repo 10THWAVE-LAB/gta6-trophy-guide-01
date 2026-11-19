@@ -3,23 +3,77 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>GTA VI trophy checklist</title>
+<title>Leonida Legend — GTA VI Trophy Guide &amp; Tracker</title>
+<meta name="description" content="An offline guide and tracker for all 55 PlayStation 5 trophies of Grand Theft Auto VI: every guide in its own words with cited sources, a roadmap to the platinum, and a checklist that saves your progress.">
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<header>
-  <h1>GTA VI trophy checklist</h1>
-  <p id="progress">0 of 55 earned</p>
+<header class="hero">
+  <div class="hero-sun" aria-hidden="true"></div>
+  <div class="hero-inner">
+    <p class="hero-kicker">Grand Theft Auto VI &middot; PlayStation 5 &middot; Offline guide</p>
+    <h1>LEONIDA <span>LEGEND</span></h1>
+    <p class="hero-sub">All 55 trophies. Every guide written for this page, with its sources cited. Track your run to the platinum &mdash; no account, no network, your progress stays in your browser.</p>
+    <p class="hero-facts"><strong>55</strong> trophies &middot; <strong>1</strong> platinum &middot; <strong>2</strong> gold &middot; <strong>6</strong> silver &middot; <strong>46</strong> bronze &middot; <strong>28</strong> hidden &middot; <strong>~200 hours</strong> to platinum &middot; <strong>0</strong> online trophies</p>
+  </div>
 </header>
-<div class="controls">
-  <label>Grade <select id="grade"><option value="all">All</option><option value="platinum">Platinum</option><option value="gold">Gold</option><option value="silver">Silver</option><option value="bronze">Bronze</option></select></label>
-  <button id="export" type="button">Export progress</button>
-  <label class="import">Import progress <input id="import" type="file" accept="application/json"></label>
-</div>
-<table>
-  <thead><tr><th>Earned</th><th>Trophy</th><th>Grade</th><th>How to get it</th></tr></thead>
-  <tbody id="rows"></tbody>
-</table>
+
+<nav class="tabs" aria-label="Views">
+  <a id="tab-checklist" href="#/checklist">Checklist</a>
+  <a id="tab-roadmap" href="#/roadmap">Roadmap to Platinum</a>
+</nav>
+
+<section id="progress" class="progress" aria-label="Your progress"></section>
+
+<section id="toolbar" class="toolbar" aria-label="Find and filter trophies">
+  <div class="toolbar-row">
+    <input id="search" type="search" placeholder="Search trophies by name…" autocomplete="off" aria-label="Search trophies by name">
+    <label class="spoiler-toggle"><input id="spoiler" type="checkbox"> <span>Hide story spoilers</span></label>
+  </div>
+  <div id="filters" class="filters" role="group" aria-label="Filter by kind"></div>
+  <div class="toolbar-row toolbar-actions">
+    <label class="grade-label">Grade
+      <select id="grade-filter" aria-label="Filter by grade">
+        <option value="all">All grades</option>
+        <option value="platinum">Platinum</option>
+        <option value="gold">Gold</option>
+        <option value="silver">Silver</option>
+        <option value="bronze">Bronze</option>
+      </select>
+    </label>
+    <label class="grade-label">Show
+      <select id="earned-filter" aria-label="Filter by earned state">
+        <option value="all">All trophies</option>
+        <option value="unearned">Not earned yet</option>
+        <option value="earned">Earned</option>
+      </select>
+    </label>
+    <span class="spacer"></span>
+    <button id="export-btn" type="button">Export progress</button>
+    <button id="import-btn" type="button">Import progress</button>
+    <button id="reset-btn" type="button" class="danger">Reset</button>
+    <input id="import-file" type="file" accept=".json,application/json" hidden>
+  </div>
+  <p id="missable-warning" class="missable-warning" hidden><strong>Missable:</strong> one trophy can be lost — <a href="#/checklist?open=28">Positive Mental Attitude</a> needs a Chapter 1 meditation at Jason&rsquo;s house. Do it before Chapter 1 ends; there is no mission replay.</p>
+</section>
+
+<main>
+  <section id="checklist-view" aria-label="Trophy checklist">
+    <p id="list-count" class="list-count"></p>
+    <div id="list" class="list"></div>
+    <p id="empty" class="empty" hidden>No trophies match. Clear the search or try another filter.</p>
+  </section>
+  <section id="roadmap-view" aria-label="Roadmap to the platinum" hidden></section>
+</main>
+
+<footer class="footer">
+  <h2>About this guide</h2>
+  <p>Names, descriptions and grades are the official PlayStation list, as tracked by Exophase and PSNProfiles. Every guide is written for this page in its own words; each one names the public guides, wikis and tracker pages its facts come from, and links them. Sources are cited, never copied.</p>
+  <p>Counts come from the official descriptions and the cited guides: 42 Shooting Range challenges, 14 Top Fun drone race locations, 18 meditations, 480 collectible cards in 18 sets, 100 WAiNK locations, 397 stunts, 52 areas of Leonida, 9 gangs, 8 garages. Where launch-era guides had no confirmed method, the guide says so honestly instead of inventing one.</p>
+  <p class="disclaimer">An unofficial fan guide. Not affiliated with or endorsed by Rockstar Games or Take-Two Interactive. No Rockstar logo, artwork or game imagery is used anywhere on this page.</p>
+  <p class="offline-note">Works fully offline. Progress is saved in your browser only (localStorage) and can be exported to a file and imported back.</p>
+</footer>
+
 <script type="module" src="app.js"></script>
 </body>
 </html>
